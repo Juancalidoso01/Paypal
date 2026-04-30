@@ -48,12 +48,12 @@ export function PaypalTopupCalculator() {
             id="calculator-title"
             className="mt-3 text-3xl font-extrabold tracking-[-0.04em] text-slate-950 sm:text-4xl"
           >
-            Visualiza cuanto quieres recargar en PayPal.
+            Calcula cuanto pagas para recargar Punto Pago.
           </h2>
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
-            Escribe el monto que quieres recargar y calcula el total con la
-            metodologia de Punto Pago: comision 6.75%, comision fija e ITBMS
-            sobre la comision.
+            Escribe cuanto quieres recibir en tu billetera Punto Pago. La
+            calculadora suma la comision 6.75%, la comision fija y el ITBMS
+            sobre la comision para estimar el total a pagar con PayPal.
           </p>
         </div>
 
@@ -62,7 +62,7 @@ export function PaypalTopupCalculator() {
             htmlFor="topup-amount"
             className="text-sm font-semibold text-slate-700"
           >
-            Monto a recargar
+            Monto que recibes en Punto Pago
           </label>
           <div className="mt-3 flex items-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 focus-within:border-[#4749B6] focus-within:ring-4 focus-within:ring-[#4749B6]/10">
             <span className="text-lg font-bold text-slate-500">$</span>
@@ -96,7 +96,7 @@ export function PaypalTopupCalculator() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold text-slate-500">
-                  Recarga PayPal
+                  A billetera Punto Pago
                 </p>
                 <p className="mt-1 text-4xl font-extrabold tracking-[-0.05em] text-slate-950">
                   {formatter.format(numericAmount)}
@@ -106,7 +106,7 @@ export function PaypalTopupCalculator() {
                 <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#0070BA]">
                   PayPal
                 </p>
-                <p className="text-sm font-bold text-slate-800">Fondos</p>
+                <p className="text-sm font-bold text-slate-800">Origen</p>
               </div>
             </div>
 
@@ -132,7 +132,7 @@ export function PaypalTopupCalculator() {
             <div className="mt-4 rounded-[1.35rem] bg-[#343A6D] p-4 text-white shadow-xl shadow-[#343A6D]/20">
               <div className="flex items-center justify-between gap-4">
                 <span className="text-sm font-semibold text-white/70">
-                  Total a pagar
+                  Total a pagar con PayPal
                 </span>
                 <span className="text-2xl font-extrabold tracking-tight">
                   {formatter.format(totalToPay)}
@@ -142,7 +142,7 @@ export function PaypalTopupCalculator() {
 
             <p id="calculator-help" className="mt-4 text-sm text-slate-600">
               Calculo referencial. La app muestra el resumen final antes de
-              confirmar la recarga.
+              confirmar la recarga a tu billetera Punto Pago.
             </p>
           </div>
         </div>

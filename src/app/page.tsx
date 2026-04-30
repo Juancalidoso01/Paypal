@@ -28,7 +28,7 @@ export default function Home() {
                 Punto Pago
               </span>
               <span className="block text-[11px] font-semibold text-slate-500">
-                Recargas desde la app
+                Recargas con PayPal
               </span>
             </span>
           </a>
@@ -60,12 +60,13 @@ export default function Home() {
             </div>
 
             <h1 className="mt-6 max-w-4xl text-5xl font-extrabold tracking-[-0.065em] text-slate-950 sm:text-6xl lg:text-7xl">
-              Recarga fondos PayPal desde Punto Pago.
+              Recarga tu billetera Punto Pago con PayPal.
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-              Una experiencia pensada para Panama: abre la app, entra a la
-              nueva seccion de PayPal y completa tu recarga en pocos pasos.
+              Ahora puedes traer fondos desde PayPal directo a tu billetera
+              Punto Pago. Abre la app, elige PayPal y confirma la recarga en
+              pocos pasos.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -85,9 +86,9 @@ export default function Home() {
 
             <div className="mt-8 grid max-w-2xl grid-cols-3 gap-3">
               {[
-                ["100%", "desde la app"],
+                ["PayPal", "como origen"],
                 ["24/7", "disponible"],
-                ["3 pasos", "para recargar"],
+                ["3 pasos", "a tu billetera"],
               ].map(([value, label]) => (
                 <div
                   key={value}
@@ -123,7 +124,7 @@ export default function Home() {
                   <div>
                     <p className="text-xs font-bold text-slate-400">Punto Pago</p>
                     <p className="text-base font-extrabold text-slate-950">
-                      Recargar PayPal
+                      Recargar billetera
                     </p>
                   </div>
                   <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#4749B6] text-xs font-extrabold text-white">
@@ -135,7 +136,7 @@ export default function Home() {
                   <div className="rounded-[1.6rem] bg-gradient-to-br from-[#003087] to-[#0070BA] p-5 text-white shadow-xl shadow-[#0070BA]/25">
                     <PayPalLogo light />
                     <p className="mt-8 text-sm font-semibold text-white/70">
-                      Monto a recargar
+                      A billetera
                     </p>
                     <p className="mt-1 text-5xl font-extrabold tracking-[-0.06em]">
                       $25.00
@@ -168,12 +169,12 @@ export default function Home() {
         <section className="mt-16 grid gap-4 md:grid-cols-3">
           {[
             [
-              "Fondos para PayPal",
-              "Promociona la nueva seccion y lleva al usuario directo al flujo de recarga.",
+              "PayPal como origen",
+              "Promociona la nueva opcion para traer fondos de PayPal a la billetera Punto Pago.",
             ],
             [
               "Optimizado para movil",
-              "El deeplink abre la experiencia correcta para quien ya usa Punto Pago.",
+              "El deeplink lleva al usuario directo al flujo de recarga dentro de la app.",
             ],
             [
               "Simple y confiable",
@@ -220,11 +221,11 @@ export default function Home() {
               ],
               [
                 "Elige PayPal",
-                "Selecciona la seccion de recarga PayPal y define el monto que necesitas.",
+                "Selecciona PayPal como metodo de origen y define cuanto quieres recibir en tu billetera.",
               ],
               [
                 "Confirma",
-                "Revisa el resumen en la app y completa la transaccion con Punto Pago.",
+                "Revisa comision, ITBMS y total antes de completar la transaccion.",
               ],
             ].map(([title, description], index) => (
               <article
@@ -252,11 +253,11 @@ export default function Home() {
             <div>
               <PayPalLogo light />
               <h2 className="mt-6 max-w-2xl text-4xl font-extrabold tracking-[-0.055em] sm:text-5xl">
-                Lleva tus fondos PayPal con Punto Pago.
+                Trae tus fondos PayPal a Punto Pago.
               </h2>
               <p className="mt-4 max-w-2xl text-lg leading-8 text-white/78">
                 Una landing directa, visual y lista para convertir trafico movil
-                en aperturas de app.
+                en recargas de billetera desde PayPal.
               </p>
             </div>
             <a
@@ -271,7 +272,7 @@ export default function Home() {
 
       <footer className="relative z-10 border-t border-white/60 bg-white/55 px-4 py-8 text-center text-sm font-medium text-slate-500 backdrop-blur">
         <p>
-          Punto Pago Panama · Promocion de recarga PayPal desde la app.
+          Punto Pago Panama · Promocion para recargar la billetera con PayPal.
         </p>
       </footer>
     </div>
