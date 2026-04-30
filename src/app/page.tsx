@@ -1,4 +1,5 @@
 import { PaypalTopupCalculator } from "@/components/paypal-topup-calculator";
+import { PpCursorAmbient } from "@/components/pp-cursor-ambient";
 
 export default function Home() {
   const appLink = "https://puntopago.net/applinks/paypalTopup";
@@ -9,6 +10,7 @@ export default function Home() {
       <div className="pp-blob pp-blob-a" aria-hidden />
       <div className="pp-blob pp-blob-b" aria-hidden />
       <div className="pp-blob pp-blob-c" aria-hidden />
+      <PpCursorAmbient />
 
       <header className="sticky top-0 z-50 border-b border-white/70 bg-white/80 pt-[calc(0.75rem+env(safe-area-inset-top,0px))] shadow-sm shadow-slate-900/[0.04] backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 pb-3 sm:px-6 lg:px-8">
