@@ -1,26 +1,167 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f5fb;
+  --foreground: #0b0b13;
+  --pp-brand: #4749b6;
+  --pp-brand-dark: #34369f;
+  --paypal-blue: #0070ba;
+  --paypal-navy: #003087;
+  --paypal-light: #e7f3ff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-pp);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: clip;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--pp-brand) 22%, transparent);
+  color: var(--foreground);
+}
+
+.pp-page-bg {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(71, 73, 182, 0.2), transparent 34rem),
+    radial-gradient(circle at 88% 18%, rgba(0, 112, 186, 0.18), transparent 30rem),
+    linear-gradient(180deg, #fbfcff 0%, #f4f5fb 48%, #eef3ff 100%);
+}
+
+.pp-grid-mask {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.88), transparent 30%, rgba(244, 245, 251, 0.88)),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
+  animation: pp-grid-drift 80s linear infinite;
+}
+
+.pp-blob {
+  position: absolute;
+  z-index: -3;
+  border-radius: 9999px;
+  filter: blur(72px);
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.pp-blob-a {
+  top: -8rem;
+  left: -7rem;
+  width: min(88vw, 30rem);
+  height: min(88vw, 30rem);
+  background: color-mix(in srgb, var(--pp-brand) 42%, transparent);
+  animation: pp-float-a 22s ease-in-out infinite;
+}
+
+.pp-blob-b {
+  top: 20rem;
+  right: -8rem;
+  width: min(75vw, 26rem);
+  height: min(75vw, 26rem);
+  background: color-mix(in srgb, var(--paypal-blue) 34%, transparent);
+  animation: pp-float-b 26s ease-in-out infinite;
+}
+
+.pp-blob-c {
+  bottom: 8rem;
+  left: 18%;
+  width: min(65vw, 23rem);
+  height: min(65vw, 23rem);
+  background: color-mix(in srgb, #8b5cf6 26%, #93c5fd 16%, transparent);
+  animation: pp-float-c 19s ease-in-out infinite;
+}
+
+.pp-card {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 24px 80px rgba(25, 31, 72, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+.pp-touch {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.paypal-wordmark {
+  letter-spacing: -0.08em;
+}
+
+.phone-shine {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.72), transparent 36%),
+    linear-gradient(160deg, #111827 0%, #1f2a44 54%, #101827 100%);
+}
+
+@keyframes pp-grid-drift {
+  from {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  to {
+    background-position: 0 0, 48px 48px, 48px 48px;
+  }
+}
+
+@keyframes pp-float-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  45% {
+    transform: translate(38px, -24px) scale(1.06);
+  }
+  72% {
+    transform: translate(-20px, 22px) scale(0.97);
+  }
+}
+
+@keyframes pp-float-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  40% {
+    transform: translate(-42px, 32px) scale(1.08);
+  }
+  75% {
+    transform: translate(24px, -18px) scale(0.95);
+  }
+}
+
+@keyframes pp-float-c {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, -24px) scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-grid-mask,
+  .pp-blob-a,
+  .pp-blob-b,
+  .pp-blob-c {
+    animation: none;
+  }
 }
