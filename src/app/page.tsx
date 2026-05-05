@@ -169,24 +169,30 @@ export default function Home() {
         <section className="mt-16 grid gap-4 md:grid-cols-3">
           {[
             [
-              "PayPal como origen",
-              "Promociona la nueva opcion para traer fondos de PayPal a la billetera Punto Pago.",
+              "Trae tu saldo de PayPal al instante",
+              "Transfiere en tiempo real desde PayPal a tu cuenta Punto Pago y usalo al instante.",
             ],
             [
-              "Optimizado para movil",
-              "El deeplink lleva al usuario directo al flujo de recarga dentro de la app.",
+              "Experiencia optimizada en la app movil",
+              "El deeplink abre directamente la funcionalidad para quienes ya usan Punto Pago, sin pasos adicionales.",
             ],
             [
               "Simple y confiable",
               "Mensajes claros, pasos cortos y confirmacion final dentro de la app.",
             ],
-          ].map(([title, description]) => (
+          ].map(([title, description], index) => (
             <article
               key={title}
               className="pp-card rounded-[1.7rem] p-6 transition hover:-translate-y-1"
             >
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF2FF] text-xl font-extrabold text-[#0070BA]">
-                {title.charAt(0)}
+                {index === 0 ? (
+                  <SpeedIcon />
+                ) : index === 1 ? (
+                  <MobileAppIcon />
+                ) : (
+                  title.charAt(0)
+                )}
               </div>
               <h2 className="text-xl font-extrabold tracking-tight text-slate-950">
                 {title}
@@ -291,5 +297,68 @@ function PayPalLogo({ light = false }: { light?: boolean }) {
       <span>Pay</span>
       <span className={light ? "text-white/78" : "text-[#0070BA]"}>Pal</span>
     </span>
+  );
+}
+
+function SpeedIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-6 w-6"
+      fill="none"
+      aria-hidden
+    >
+      <path
+        d="M4 13a8 8 0 0 1 16 0"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="m12 13 4.5-4.5"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M7 17h10"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function MobileAppIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-6 w-6"
+      fill="none"
+      aria-hidden
+    >
+      <rect
+        x="7"
+        y="3"
+        width="10"
+        height="18"
+        rx="2.5"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M10.5 6h3"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M11.5 17.5h1"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
   );
 }
