@@ -60,7 +60,7 @@ export default function Home() {
             </div>
 
             <h1 className="mt-6 max-w-4xl text-5xl font-extrabold tracking-[-0.065em] text-slate-950 sm:text-6xl lg:text-7xl">
-              Recarga tu billetera Punto Pago con PayPal.
+              Transfiere dinero desde PayPal a Punto Pago.
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
@@ -209,7 +209,7 @@ export default function Home() {
               Como funciona
             </p>
             <h2 className="mt-3 text-4xl font-extrabold tracking-[-0.05em] text-slate-950">
-              De la promocion a la recarga en tres pasos.
+              Obten tu dinero en menos de 1 minuto.
             </h2>
           </div>
 
@@ -253,11 +253,12 @@ export default function Home() {
             <div>
               <PayPalLogo light />
               <h2 className="mt-6 max-w-2xl text-4xl font-extrabold tracking-[-0.055em] sm:text-5xl">
-                Trae tus fondos PayPal a Punto Pago.
+                Con Punto Pago ahora PayPal es mas sencillo.
               </h2>
               <p className="mt-4 max-w-2xl text-lg leading-8 text-white/78">
-                Una landing directa, visual y lista para convertir trafico movil
-                en recargas de billetera desde PayPal.
+                Con Punto Pago podras pagar servicios, emitir tus tarjetas,
+                acceder a creditos, comprar en marketplace y enviar remesas de
+                forma facil y rapida.
               </p>
             </div>
             <a
