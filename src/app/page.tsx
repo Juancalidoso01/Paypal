@@ -174,11 +174,11 @@ export default function Home() {
             ],
             [
               "Experiencia optimizada en la app movil",
-              "El deeplink abre directamente la funcionalidad para quienes ya usan Punto Pago, sin pasos adicionales.",
+              "Mas rapido, directo y siempre a la mano para manejar tu dinero sin complicaciones.",
             ],
             [
               "Simple y confiable",
-              "Mensajes claros, pasos cortos y confirmacion final dentro de la app.",
+              "Transacciones seguras, registro de cada movimiento y respaldo dentro de la app.",
             ],
           ].map(([title, description], index) => (
             <article
@@ -190,6 +190,8 @@ export default function Home() {
                   <SpeedIcon />
                 ) : index === 1 ? (
                   <MobileAppIcon />
+                ) : index === 2 ? (
+                  <ShieldIcon />
                 ) : (
                   title.charAt(0)
                 )}
@@ -358,6 +360,31 @@ function MobileAppIcon() {
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function ShieldIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-6 w-6"
+      fill="none"
+      aria-hidden
+    >
+      <path
+        d="M12 3 19 6v5c0 4.5-2.8 8-7 10-4.2-2-7-5.5-7-10V6l7-3Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path
+        d="m9 12 2 2 4-4"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
