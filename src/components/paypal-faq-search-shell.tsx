@@ -47,7 +47,7 @@ export function PaypalFaqSearchShell({ children }: { children: ReactNode }) {
           htmlFor={inputId}
           className="text-sm font-bold text-slate-800"
         >
-          Buscar en preguntas frecuentes
+          Buscar en estas preguntas
         </label>
         <input
           id={inputId}
@@ -55,7 +55,7 @@ export function PaypalFaqSearchShell({ children }: { children: ReactNode }) {
           name="faq-search"
           autoComplete="off"
           enterKeyHint="search"
-          placeholder="Ej.: comisión, límite, contracargo, WhatsApp…"
+          placeholder="Ejemplo: cobro, WhatsApp, cuenta…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="pp-touch mt-3 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-base text-slate-900 outline-none ring-[#4749B6]/0 transition placeholder:text-slate-400 focus:border-[#4749B6] focus:ring-4 focus:ring-[#4749B6]/15"
@@ -63,10 +63,10 @@ export function PaypalFaqSearchShell({ children }: { children: ReactNode }) {
         />
         <p id={statusId} className="mt-2 text-xs text-slate-500" aria-live="polite">
           {noResults
-            ? `Sin resultados para «${query.trim()}». Prueba otra palabra.`
+            ? `No hay ninguna pregunta con «${query.trim()}». Prueba otra cosa o borra lo que escribiste para ver todas.`
             : query.trim()
-              ? "Mostrando coincidencias. Borra el texto para ver todo de nuevo."
-              : "Escribe una palabra para acotar las preguntas; borra el texto para ver la lista completa otra vez."}
+              ? "Solo ves las que tienen lo que escribiste. Borra todo de aquí para ver todas otra vez."
+              : "Escribe lo que buscas y te salen las preguntas donde sale eso. Si borras todo, vuelves a ver la lista entera."}
         </p>
       </div>
 
