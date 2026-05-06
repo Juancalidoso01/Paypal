@@ -66,7 +66,7 @@ export function PaypalFaqSearchShell({ children }: { children: ReactNode }) {
             ? `Sin resultados para «${query.trim()}». Prueba otra palabra.`
             : query.trim()
               ? "Mostrando coincidencias. Borra el texto para ver todo de nuevo."
-              : "Filtra por palabra clave; el contenido completo sigue indexable en la página."}
+              : "Escribe una palabra para acotar las preguntas; borra el texto para ver la lista completa otra vez."}
         </p>
       </div>
 
