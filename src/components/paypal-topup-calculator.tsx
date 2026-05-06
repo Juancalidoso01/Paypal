@@ -42,18 +42,18 @@ export function PaypalTopupCalculator() {
       <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#4749B6]">
-            Calculadora rapida
+            Calculadora rápida
           </p>
           <h2
             id="calculator-title"
             className="mt-3 text-3xl font-extrabold tracking-[-0.04em] text-slate-950 sm:text-4xl"
           >
-            Calcula cuanto pagas para recargar Punto Pago.
+            Calcula cuánto pagas para recargar Punto Pago.
           </h2>
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
-            Escribe cuanto quieres recibir en tu billetera Punto Pago. La
-            calculadora suma la comision 6.75%, la comision fija y el ITBMS
-            sobre la comision para estimar el total a pagar con PayPal.
+          <p className="mt-4 max-w-xl text-pretty text-base leading-7 text-slate-600 hyphens-auto sm:text-justify">
+            Escribe cuánto quieres recibir en tu billetera Punto Pago. La
+            calculadora suma la comisión 6.75%, la comisión fija y el ITBMS
+            sobre la comisión para estimar el total a pagar con PayPal.
           </p>
         </div>
 
@@ -112,15 +112,15 @@ export function PaypalTopupCalculator() {
 
             <div className="mt-5 rounded-[1.35rem] border border-white/80 bg-white/90 p-4 text-sm shadow-lg shadow-slate-900/[0.06]">
               <FeeRow
-                label="Comision 6.75%"
+                label="Comisión 6.75%"
                 value={formatter.format(percentCommission)}
               />
               <FeeRow
-                label="Comision fija"
+                label="Comisión fija"
                 value={formatter.format(fixedCommission)}
               />
               <FeeRow
-                label="ITBMS de comision 7%"
+                label="ITBMS de comisión 7%"
                 value={formatter.format(commissionTax)}
               />
               <div className="mt-3 flex items-center justify-between border-t border-slate-200 pt-3 font-extrabold text-slate-900">
@@ -141,7 +141,7 @@ export function PaypalTopupCalculator() {
             </div>
 
             <p id="calculator-help" className="mt-4 text-sm text-slate-600">
-              Calculo referencial. La app muestra el resumen final antes de
+              Cálculo referencial. La app muestra el resumen final antes de
               confirmar la recarga a tu billetera Punto Pago.
             </p>
           </div>

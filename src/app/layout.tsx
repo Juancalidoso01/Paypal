@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Recarga Punto Pago con PayPal",
   description:
-    "Promocion de Punto Pago para recargar la billetera desde PayPal en la app.",
+    "Promoción de Punto Pago para recargar la billetera desde PayPal en la app.",
   formatDetection: {
     telephone: false,
   },

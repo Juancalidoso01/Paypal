@@ -80,7 +80,7 @@ export default function Home() {
                 href="#como-funciona"
                 className="pp-touch inline-flex min-h-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/75 px-6 py-3 text-base font-extrabold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-[#4749B6]/35 hover:text-[#4749B6]"
               >
-                Ver como funciona
+                Ver cómo funciona
               </a>
             </div>
 
@@ -108,7 +108,7 @@ export default function Home() {
           <div className="relative mx-auto w-full max-w-lg">
             <div className="absolute -left-8 top-10 hidden rotate-[-8deg] rounded-[1.6rem] bg-white p-4 shadow-2xl shadow-slate-900/10 sm:block">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">
-                Nueva seccion
+                Nueva sección
               </p>
               <div className="mt-2 flex items-center gap-2">
                 <PayPalLogo />
@@ -170,11 +170,11 @@ export default function Home() {
           {[
             [
               "Trae tu saldo de PayPal al instante",
-              "Transfiere en tiempo real desde PayPal a tu cuenta Punto Pago y usalo al instante.",
+              "Transfiere en tiempo real desde PayPal a tu cuenta Punto Pago y úsalo al instante.",
             ],
             [
-              "Experiencia optimizada en la app movil",
-              "Mas rapido, directo y siempre a la mano para manejar tu dinero sin complicaciones.",
+              "Experiencia optimizada en la app móvil",
+              "Más rápido, directo y siempre a la mano para manejar tu dinero sin complicaciones.",
             ],
             [
               "Simple y confiable",
@@ -199,7 +199,9 @@ export default function Home() {
               <h2 className="text-xl font-extrabold tracking-tight text-slate-950">
                 {title}
               </h2>
-              <p className="mt-3 leading-7 text-slate-600">{description}</p>
+              <p className="mt-3 text-pretty leading-7 text-slate-600 hyphens-auto sm:text-justify">
+                {description}
+              </p>
             </article>
           ))}
         </section>
@@ -214,10 +216,10 @@ export default function Home() {
         >
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#4749B6]">
-              Como funciona
+              Cómo funciona
             </p>
             <h2 className="mt-3 text-4xl font-extrabold tracking-[-0.05em] text-slate-950">
-              Obten tu dinero en menos de 1 minuto.
+              Obtén tu dinero en menos de 1 minuto.
             </h2>
           </div>
 
@@ -225,15 +227,15 @@ export default function Home() {
             {[
               [
                 "Abre Punto Pago",
-                "Usa el boton de esta pagina para descargar o entrar directo a la app.",
+                "Usa el botón de esta página para descargar o entrar directo a la app.",
               ],
               [
                 "Elige PayPal",
-                "Selecciona PayPal como metodo de origen y define cuanto quieres recibir en tu billetera.",
+                "Selecciona PayPal como método de origen y define cuánto quieres recibir en tu billetera.",
               ],
               [
                 "Confirma",
-                "Revisa comision, ITBMS y total antes de completar la transaccion.",
+                "Revisa comisión, ITBMS y total antes de completar la transacción.",
               ],
             ].map(([title, description], index) => (
               <article
@@ -247,7 +249,7 @@ export default function Home() {
                   <h3 className="text-lg font-extrabold text-slate-950">
                     {title}
                   </h3>
-                  <p className="mt-1 leading-7 text-slate-600">
+                  <p className="mt-1 text-pretty leading-7 text-slate-600 hyphens-auto sm:text-justify">
                     {description}
                   </p>
                 </div>
@@ -261,12 +263,12 @@ export default function Home() {
             <div>
               <PayPalLogo light />
               <h2 className="mt-6 max-w-2xl text-4xl font-extrabold tracking-[-0.055em] sm:text-5xl">
-                Con Punto Pago ahora PayPal es mas sencillo.
+                Con Punto Pago ahora PayPal es más sencillo.
               </h2>
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-white/78">
-                Con Punto Pago podras pagar servicios, emitir tus tarjetas,
-                acceder a creditos, comprar en marketplace y enviar remesas de
-                forma facil y rapida.
+              <p className="mt-4 max-w-2xl text-pretty text-lg leading-8 text-white/78 hyphens-auto sm:text-justify">
+                Con Punto Pago podrás pagar servicios, emitir tus tarjetas,
+                acceder a créditos, comprar en marketplace y enviar remesas de
+                forma fácil y rápida.
               </p>
             </div>
             <a
@@ -281,7 +283,7 @@ export default function Home() {
 
       <footer className="relative z-10 border-t border-white/60 bg-white/55 px-4 py-8 text-center text-sm font-medium text-slate-500 backdrop-blur">
         <p>
-          Punto Pago Panama · Promocion para recargar la billetera con PayPal.
+          Punto Pago Panamá · Promoción para recargar la billetera con PayPal.
         </p>
       </footer>
     </div>
