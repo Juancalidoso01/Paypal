@@ -58,7 +58,10 @@ export default function Home() {
         <div className="h-0.5 bg-gradient-to-r from-transparent via-[#4749B6]/40 to-transparent" />
       </header>
 
-      <main className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-20 pt-10 sm:px-6 sm:pt-14 lg:px-8">
+      <main
+        id="inicio"
+        className="relative z-10 mx-auto w-full max-w-7xl scroll-mt-28 px-4 pb-20 pt-10 sm:px-6 sm:pt-14 lg:px-8"
+      >
         <section className="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/70 px-3 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-[#4749B6] shadow-sm backdrop-blur">

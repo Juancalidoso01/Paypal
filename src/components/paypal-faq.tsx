@@ -1,5 +1,8 @@
 import type { ReactNode } from "react";
 
+import { PaypalFaqJsonLd } from "@/components/paypal-faq-json-ld";
+import { PaypalFaqSearchShell } from "@/components/paypal-faq-search-shell";
+import { faqNeedleFromGroupAndQuestion } from "@/lib/faq-search-normalize";
 import { computeTopupFees } from "@/lib/paypal-topup-fees";
 
 const FAQ_EXAMPLE_RECEIVED = 10;
@@ -231,7 +234,7 @@ const FAQ_GROUPS: FaqGroup[] = [
 
 function FaqDetails({ question, children }: FaqItem) {
   return (
-    <details className="group border-b border-slate-200/90 last:border-b-0">
+    <details className="group">
       <summary className="pp-faq-summary pp-touch flex cursor-pointer list-none items-start justify-between gap-4 py-4 text-left text-base font-bold text-slate-950 sm:text-[17px]">
         <span className="min-w-0 flex-1">{question}</span>
         <span
@@ -255,6 +258,7 @@ export function PaypalFaq() {
       className="pp-faq mt-16 scroll-mt-28"
       aria-labelledby="faq-heading"
     >
+      <PaypalFaqJsonLd />
       <div className="pp-card rounded-[2rem] p-5 sm:p-8 lg:p-10">
         <div className="max-w-3xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#4749B6]">
@@ -268,24 +272,50 @@ export function PaypalFaq() {
           </h2>
           <p className="mt-4 text-pretty text-base leading-7 text-slate-600 hyphens-auto sm:text-justify">
             Aquí encontrarás lo esencial sobre el nuevo método para recargar con
-            PayPal a través de nuestra plataforma.
+            PayPal a través de nuestra plataforma. Toca una pregunta para ver la
+            respuesta.
           </p>
         </div>
 
-        <div className="mt-10 space-y-8">
-          {FAQ_GROUPS.map((group) => (
-            <div key={group.id}>
-              <h3 className="mb-1 text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500">
-                {group.title}
-              </h3>
-              <div className="rounded-[1.35rem] border border-slate-200/80 bg-white/60 px-4 sm:px-5">
-                {group.items.map((item) => (
-                  <FaqDetails key={item.question} {...item} />
-                ))}
+        <PaypalFaqSearchShell>
+          <div className="space-y-10">
+            {FAQ_GROUPS.map((group) => (
+              <div
+                key={group.id}
+                data-faq-group
+                className="relative border-l-[3px] border-l-[#4749B6]/35 pl-4 sm:pl-6"
+              >
+                <h3 className="mb-3 text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500">
+                  {group.title}
+                </h3>
+                <div className="divide-y divide-slate-200/90 rounded-[1.35rem] border border-slate-200/80 bg-white/70 px-4 shadow-sm shadow-slate-900/[0.04] sm:px-5">
+                  {group.items.map((item) => (
+                    <div
+                      key={item.question}
+                      data-faq-item
+                      data-faq-needle={faqNeedleFromGroupAndQuestion(
+                        group.title,
+                        item.question,
+                      )}
+                    >
+                      <FaqDetails {...item} />
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </PaypalFaqSearchShell>
+
+        <p className="mt-8 flex justify-center sm:mt-10 md:hidden">
+          <a
+            href="#inicio"
+            className="pp-touch inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-4 py-2.5 text-sm font-bold text-[#4749B6] shadow-sm transition hover:border-[#4749B6]/40 hover:bg-[#EAF2FF]"
+          >
+            <span aria-hidden>↑</span>
+            Volver arriba
+          </a>
+        </p>
 
         <div className="mt-10 rounded-[1.35rem] border border-emerald-200/70 bg-gradient-to-br from-emerald-50/90 to-[#EEF4FF] p-5 sm:p-6">
           <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-emerald-800">
