@@ -1,3 +1,4 @@
+import { PaypalFaq } from "@/components/paypal-faq";
 import { PaypalTopupCalculator } from "@/components/paypal-topup-calculator";
 import { PpCursorAmbient } from "@/components/pp-cursor-ambient";
 
@@ -39,6 +40,12 @@ export default function Home() {
               className="hidden rounded-full px-4 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-[#4749B6] sm:inline-flex"
             >
               Calculadora
+            </a>
+            <a
+              href="#preguntas-frecuentes"
+              className="hidden rounded-full px-4 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-[#4749B6] lg:inline-flex"
+            >
+              Preguntas
             </a>
             <a
               href={appLink}
@@ -257,6 +264,8 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <PaypalFaq />
 
         <section className="mt-16 overflow-hidden rounded-[2.2rem] bg-gradient-to-br from-[#34369F] via-[#4749B6] to-[#0070BA] p-6 text-white shadow-2xl shadow-[#4749B6]/25 sm:p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">

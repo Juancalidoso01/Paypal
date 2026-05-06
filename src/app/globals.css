@@ -102,6 +102,10 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+.pp-faq-summary::-webkit-details-marker {
+  display: none;
+}
+
 .paypal-wordmark {
   letter-spacing: -0.08em;
 }

@@ -2,19 +2,14 @@
 
 import { useState } from "react";
 
+import { computeTopupFees } from "@/lib/paypal-topup-fees";
+
 const formatter = new Intl.NumberFormat("es-PA", {
   style: "currency",
   currency: "USD",
 });
 
-const PERCENT_COMMISSION_RATE = 0.0675;
-const FIXED_COMMISSION = 0.5;
-const ITBMS_RATE = 0.07;
 const MAX_TOPUP_AMOUNT = 500;
-
-function roundMoney(value: number) {
-  return Math.round((value + Number.EPSILON) * 100) / 100;
-}
 
 export function PaypalTopupCalculator() {
   const [amount, setAmount] = useState("25");
@@ -22,14 +17,14 @@ export function PaypalTopupCalculator() {
   const numericAmount = Number.isFinite(value)
     ? Math.min(Math.max(value, 0), MAX_TOPUP_AMOUNT)
     : 0;
-  const percentCommission = roundMoney(
-    numericAmount * PERCENT_COMMISSION_RATE,
-  );
-  const fixedCommission = FIXED_COMMISSION;
-  const commissionSubtotal = roundMoney(percentCommission + fixedCommission);
-  const commissionTax = roundMoney(commissionSubtotal * ITBMS_RATE);
-  const totalFee = roundMoney(commissionSubtotal + commissionTax);
-  const totalToPay = roundMoney(numericAmount + totalFee);
+  const {
+    percentCommission,
+    fixedCommission,
+    commissionSubtotal,
+    commissionTax,
+    totalFee,
+    totalToPay,
+  } = computeTopupFees(numericAmount);
 
   const suggestions = [10, 25, 50, 100];
 
